@@ -16,7 +16,37 @@ button {padding:10px; margin:5px; cursor:pointer;}
 </style>
 
 </head>
+function orderNow(){
 
+let name = document.getElementById("name").value;
+let address = document.getElementById("address").value;
+let phone = document.getElementById("phone").value;
+
+if(!name || !address || !phone){
+alert("Please fill all fields!");
+return;
+}
+
+if(cart.length === 0){
+alert("Your cart is empty!");
+return;
+}
+
+let shopNumber = "8801XXXXXXXXX"; // তোমার WhatsApp নাম্বার
+
+let msg =
+"🐔 Chicken House Order\n\n" +
+"Name: " + name + "\n" +
+"Phone: " + phone + "\n" +
+"Address: " + address + "\n\n" +
+"Items:\n" + cart.join("\n") + "\n\n" +
+"Total: $" + total;
+
+let encodedMsg = encodeURIComponent(msg);
+
+window.open("https://wa.me/" + shopNumber + "?text=" + encodedMsg, "_blank");
+
+}
 <body>
 
 <header>
