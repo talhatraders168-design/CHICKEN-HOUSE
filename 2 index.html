@@ -1,0 +1,20 @@
+<!DOCTYPE html><html><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Chicken House Shop</title>
+<style>body{font-family:Arial;margin:0;background:#fff7e6}header{background:#d32f2f;color:#fff;padding:15px;text-align:center}.container{padding:15px}.card{background:#fff;padding:15px;margin:10px 0;border-radius:10px}button{padding:8px 12px;margin:5px;cursor:pointer}.cart{background:#222;color:#fff;padding:10px;border-radius:10px}.lang{text-align:center;margin:10px}</style></head>
+<body>
+<header><h1> Chicken House</h1><p id="tag">Fresh Chicken Shop</p></header>
+<div class="lang"><button onclick="setLang('en')">English</button><button onclick="setLang('bn')">বাংলা</button></div>
+<div class="container">
+<div class="card"><h3> <span id="item1">Grilled Chicken</span> - 5$</h3><button onclick="addItem('Grilled Chicken',5)">Add</button></div>
+<div class="card"><h3> <span id="item2">Fried Chicken</span> - 4$</h3><button onclick="addItem('Fried Chicken',4)">Add</button></div>
+<div class="card"><h3> <span id="item3">Chicken Burger</span> - 3$</h3><button onclick="addItem('Chicken Burger',3)">Add</button></div>
+<div class="cart"><h3 id="cartTitle">Cart</h3><ul id="cart"></ul><p><b>Total: $<span id="total">0</span></b></p>
+<button onclick="orderNow()"> Order on WhatsApp</button></div>
+</div>
+<script>
+let cart = [];let total = 0;
+function addItem(name, price){cart.push(name + " - $" + price);total += price;renderCart();}
+function renderCart(){document.getElementById("cart").innerHTML =cart.map(i => "<li>"+i+"</li>").join("");document.getElementById("total").innerText = total;}
+function orderNow(){let phone = "8801XXXXXXXXX"; // তোমার নাম্বার বসাওlet msg = "Hello, I want to order:%0A" + cart.join("%0A") + "%0ATotal: $" + total;window.open("https://wa.me/"+phone+"?text="+msg,"_blank");}
+function setLang(lang){if(lang==="bn"){document.getElementById("tag").innerText="তাজা চিকেন শপ";document.getElementById("item1").innerText="গ্রিল চিকেন";document.getElementById("item2").innerText="ফ্রাইড চিকেন";document.getElementById("item3").innerText="চিকেন বার্গার";document.getElementById("cartTitle").innerText="কার্ট";}else{document.getElementById("tag").innerText="Fresh Chicken Shop";document.getElementById("item1").innerText="Grilled Chicken";document.getElementById("item2").innerText="Fried Chicken";document.getElementById("item3").innerText="Chicken Burger";document.getElementById("cartTitle").innerText="Cart";}}
+</script>
+</body></html>
