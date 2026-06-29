@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chicken House</title>
+
+<style>
+body {font-family: Arial; margin:0; background:#fff7e6;}
+header {background:#d32f2f; color:white; padding:15px; text-align:center;}
+nav {text-align:center; margin:10px;}
+button {padding:10px; margin:5px; cursor:pointer;}
+.container {padding:20px; text-align:center;}
+.card {background:white; padding:15px; margin:10px auto; width:80%; border-radius:10px;}
+.footer {background:#222; color:white; text-align:center; padding:10px;}
+</style>
+
+</head>
+
+<body>
+
+<header>
+<h1>🐔 Chicken House</h1>
+<p id="tagline">Fresh & Tasty Chicken Food</p>
+</header>
+
+<nav>
+<button onclick="setLang('en')">English</button>
+<button onclick="setLang('bn')">বাংলা</button>
+</nav>
+
+<div class="container">
+
+<div class="card">
+<h2 id="menuTitle">Our Menu</h2>
+<p id="item1">Grilled Chicken - $5</p>
+<p id="item2">Fried Chicken - $4</p>
+<p id="item3">Chicken Burger - $3</p>
+</div>
+
+<div class="card">
+<h2 id="contactTitle">Contact</h2>
+<p>📞 +8801XXXXXXXXX</p>
+<p>📍 Your Location</p>
+</div>
+
+</div>
+
+<div class="footer">
+<p>© 2026 Chicken House</p>
+</div>
+
+<script>
+function setLang(lang){
+if(lang === 'bn'){
+document.getElementById("tagline").innerText = "তাজা ও সুস্বাদু চিকেন খাবার";
+document.getElementById("menuTitle").innerText = "আমাদের মেনু";
+document.getElementById("item1").innerText = "গ্রিল চিকেন - ৫ ডলার";
+document.getElementById("item2").innerText = "ফ্রাইড চিকেন - ৪ ডলার";
+document.getElementById("item3").innerText = "চিকেন বার্গার - ৩ ডলার";
+document.getElementById("contactTitle").innerText = "যোগাযোগ";
+}
+else{
+document.getElementById("tagline").innerText = "Fresh & Tasty Chicken Food";
+document.getElementById("menuTitle").innerText = "Our Menu";
+document.getElementById("item1").innerText = "Grilled Chicken - $5";
+document.getElementById("item2").innerText = "Fried Chicken - $4";
+document.getElementById("item3").innerText = "Chicken Burger - $3";
+document.getElementById("contactTitle").innerText = "Contact";
+}
+}
+</script>
+
+</body>
+</html>
